@@ -7,6 +7,9 @@ import Merchandise from "./Pages/Merchandise";
 import Services from "./Pages/Services";
 import Login from "./Components/Login";
 
+
+
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -42,7 +45,11 @@ const router = createBrowserRouter([
   },
   {
     path : '/login',
-    element :<Login/>
+    element :<Login isLogin={true}/>
+  },
+  {
+    path : '/register',
+    element :<Login isLogin={false}/>
   }
 ]);
 function Layout() {
