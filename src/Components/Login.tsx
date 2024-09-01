@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faLock, faLockOpen } from "@fortawesome/free-solid-svg-icons";
+import { faUser, faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import {
   faFacebook,
@@ -7,6 +7,7 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
+
 
 type userInfoType = {
   userName: string;
@@ -130,10 +131,10 @@ function Login({ isLogin }: { isLogin: boolean }) {
               }
             >
               {textType === "password" ? (
-                <FontAwesomeIcon icon={faLock} className="text-gray-300 mr-2" />
+                <FontAwesomeIcon icon={faEye} className="text-gray-300 mr-2" />
               ) : (
                 <FontAwesomeIcon
-                  icon={faLockOpen}
+                  icon={faEyeSlash}
                   className="text-gray-300 mr-2"
                 />
               )}

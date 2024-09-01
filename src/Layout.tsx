@@ -1,7 +1,7 @@
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import Home from "./Pages/Home";
+import Home from "./Pages/Home/Home";
 import Facility from "./Pages/Facility";
 import Merchandise from "./Pages/Merchandise";
 import Services from "./Pages/Services";

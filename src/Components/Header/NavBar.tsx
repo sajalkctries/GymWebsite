@@ -1,5 +1,6 @@
 import {
   faArrowRightFromBracket,
+  faBars,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,20 +8,20 @@ import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 
 function NavBar({ token }: { token: string }) {
-  console.log(token);
-  const [isLoggedin,setIsLoggedIn] = useState(!!token)
-
+  const [isLoggedIn, setIsLoggedIn] = useState(!!token);
   const [displayMenu, setDisplayMenu] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  function handleLogOut(){
+  function handleLogOut() {
     localStorage.removeItem("token");
-    setIsLoggedIn(false)
+    setIsLoggedIn(false);
   }
+
   return (
     <nav className="flex justify-between items-center py-3 px-5">
       <div>
         <NavLink
-          to={"/home"}
+          to="/home"
           className={({ isActive }) =>
             isActive ? "text-white" : "text-gray-300"
           }
@@ -29,51 +30,62 @@ function NavBar({ token }: { token: string }) {
           <span>Fitness World</span>
         </NavLink>
       </div>
-      <div className="flex gap-4">
-        <ul className="flex gap-7 items-center">
+      <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+        <FontAwesomeIcon icon={faBars} className="block sm:hidden" />
+      </button>
+      <div
+        className={`sm:flex flex-col sm:flex-row gap-4 absolute sm:static bg-transparent right-0 top-9 z-10 ${mobileMenuOpen ? 'flex' : 'hidden'}`}
+      >
+        <ul className="flex flex-col sm:flex-row gap-7 items-center">
           <li>
             <NavLink
-              to={"/services"}
-              className={({ isActive }) => (isActive ? "text-blue-500" : "")}
+              to="/services"
+              className={({ isActive }) =>
+                isActive ? "text-blue-500" : ""
+              }
             >
               Services
             </NavLink>
           </li>
           <li>
             <NavLink
-              to={"/facility"}
-              className={({ isActive }) => (isActive ? "text-blue-500" : "")}
+              to="/facility"
+              className={({ isActive }) =>
+                isActive ? "text-blue-500" : ""
+              }
             >
               Facility
             </NavLink>
           </li>
           <li>
             <NavLink
-              to={"/merchandise"}
-              className={({ isActive }) => (isActive ? "text-blue-500" : "")}
+              to="/merchandise"
+              className={({ isActive }) =>
+                isActive ? "text-blue-500" : ""
+              }
             >
               Merchandise
             </NavLink>
           </li>
         </ul>
-        {!isLoggedin ? (
+        {!isLoggedIn ? (
           <button className="bg-lime-500 p-2 rounded-tl-2xl hover:text-black hover:bg-lime-700 transition-all duration-700 ease-in-out">
-            <Link to={"/login"}>login</Link>
+            <Link to="/login">Login</Link>
           </button>
         ) : (
-          <div className="flex flex-col justify-center relative">
-            <FontAwesomeIcon
-              icon={faUser}
-              onClick={() => setDisplayMenu(!displayMenu)}
-            />
+          <div className="flex flex-col justify-center relative z-10 cursor-pointer">
+            <button onClick={() => setDisplayMenu(!displayMenu)}>
+              <FontAwesomeIcon icon={faUser} />
+            </button>
             {displayMenu && (
-              <div className="absolute top-6 left-[-20px] bg-transparent border-b-2 border-black">
-                <div className="flex gap-2 cursor-pointer" onClick={handleLogOut}>
-                  <span>logout</span>{" "}
-                  <span>
-                    <FontAwesomeIcon icon={faArrowRightFromBracket} />
-                  </span>
-                </div>
+              <div className="absolute top-6 left-[10px] sm:left-[-20px] border-b-2 border-black">
+                <button
+                  className="flex gap-2 cursor-pointer items-center"
+                  onClick={handleLogOut}
+                >
+                  <span>Logout</span>
+                  <FontAwesomeIcon icon={faArrowRightFromBracket} />
+                </button>
               </div>
             )}
           </div>
