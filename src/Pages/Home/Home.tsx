@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Card from "./Card";
 
 function Home() {
@@ -32,9 +33,12 @@ function Home() {
         "Remarkable customer service, a safe, clean, comfortable environment and the best training floor around await you at your local World Gym.",
     },
   ];
-  console.log(data);
   return (
     <main>
+      <Helmet>
+        <title>Home - Fitness World</title>
+      </Helmet>
+      <div className="text-center text-3xl p-5">Why us?</div>
       <section className="py-10 flex justify-around flex-wrap gap-5">
         {data.map((item, index) => (
           <Card

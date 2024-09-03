@@ -1,7 +1,7 @@
 import {
   faFacebook,
-  faGoogle,
   faTwitter,
+  faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
@@ -14,7 +14,7 @@ function Footer() {
         <div className="flex gap-8 absolute top-[-23px] left-[50%] translate-x-[-50%]">
           <span>
             <FontAwesomeIcon
-              icon={faGoogle}
+              icon={faYoutube}
               className="border-[5px] border-lime-500 rounded-full p-3 text-xl cursor-pointer"
             />
           </span>
@@ -32,15 +32,13 @@ function Footer() {
           </span>
         </div>
         <div className="text-4xl text-center">
-          {" "}
-          <span className="text-lime-500">&lt;&gt;</span>
-          <span>Fitness World</span>
+          <Link to={"/"}>
+            <span className="text-lime-500">&lt;&gt;</span>
+            <span>Fitness World</span>
+          </Link>
         </div>
         <div className="flex md:flex-col gap-7 justify-around mt-6">
           <ul className="flex flex-col md:flex-row  md:justify-around gap-4">
-            <Link to={"#"}>
-              <li>Gyms</li>
-            </Link>
             <Link to={"#"}>
               <li>Gyms</li>
             </Link>
@@ -53,9 +51,6 @@ function Footer() {
             <Link to={"#"}>
               {" "}
               <li>Shop</li>
-            </Link>
-            <Link to={"#"}>
-              <li>Contact</li>
             </Link>
             <Link to={"#"}>
               <li>Contact</li>

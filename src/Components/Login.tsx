@@ -7,7 +7,7 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
-
+import { Helmet } from "react-helmet-async";
 
 type userInfoType = {
   userName: string;
@@ -70,6 +70,9 @@ function Login({ isLogin }: { isLogin: boolean }) {
 
   return (
     <div className="h-full w-full flex items-center justify-center bg-gradient-to-r from-black via-[#5d5d5d] to-black">
+      <Helmet>
+        <title>Login/Register</title>
+      </Helmet>
       <div className="h-4/5 border-2 border-solid border-black flex flex-col gap-4 p-6 bg-black text-white rounded-3xl w-[17rem]">
         <span className="text-center">{isLogin ? `Login` : `Signup`}</span>
         <div>

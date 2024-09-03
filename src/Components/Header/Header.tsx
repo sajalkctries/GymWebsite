@@ -3,7 +3,7 @@ import NavBar from "./NavBar";
 function Header() {
   const token = localStorage.getItem("token") as string;
   return (
-    <header className="text-white bg-black bg-[url('/Images/Gym.jpg')] bg-cover bg-center h-96">
+    <header className="text-white bg-[url('/Images/Gym.jpg')] bg-cover bg-center h-96">
       <NavBar token={token}/>
       <div className="bg-black w-[28rem] h-80 mix-blend-screen flex flex-col justify-between px-4 py-3">
         <div className="sm:text-7xl text-5xl gap-6 flex flex-col">
