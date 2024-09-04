@@ -4,6 +4,7 @@
 
 html {
     scrollbar-width: thin;
-    scrollbar-color: green #121111;
+    scrollbar-color: #84cc16 #000000;
+    scrollbar-gutter: stable;
   }
-  
+

@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   faFacebook,
   faGoogle,
@@ -24,8 +24,6 @@ function Login({ isLogin }: { isLogin: boolean }) {
     userPassword: "",
   });
 
-  useEffect(() => console.log(userInfo), [userInfo]);
-
   function handleLoginSignup() {
     if (!isLogin) {
       console.log("Sign up Page");
@@ -46,8 +44,6 @@ function Login({ isLogin }: { isLogin: boolean }) {
         userPassword: "",
       });
     } else {
-      console.log("Login Page");
-
       const logInInfo = localStorage.getItem("info");
       if (logInInfo) {
         const storedInfo = JSON.parse(logInInfo) as userInfoType;
