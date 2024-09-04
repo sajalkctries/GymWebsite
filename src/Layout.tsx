@@ -1,4 +1,4 @@
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Link, Outlet, RouterProvider } from "react-router-dom";
 import Home from "./Pages/Home/Home";
 import Facility from "./Pages/Facility";
 import Merchandise from "./Pages/Merchandise";
@@ -37,7 +37,8 @@ const router = createBrowserRouter([
         <Footer />
       </div>
     ),
-    children: [{ path: ":id", element: <ServiceDetail /> },
+    children: [{ path: ":id", element: <ServiceDetail /> ,errorElement :<div> Oops! Page doesn't exists <Link className="text-blue-600 underline" to={`/services`}>Go Back</Link></div>}
+    
     ],
   },
   { path: "/login", element: <Login isLogin={true} /> },
