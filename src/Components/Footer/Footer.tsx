@@ -52,7 +52,7 @@ function Footer() {
               {" "}
               <li>Shop</li>
             </Link>
-            <Link to={"#"}>
+            <Link to={"/contact"}>
               <li>Contact</li>
             </Link>
           </ul>

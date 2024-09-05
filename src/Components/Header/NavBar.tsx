@@ -49,12 +49,12 @@ function NavBar({ token }: { token: string }) {
           </li>
           <li>
             <NavLink
-              to="/facility"
+              to="/contact"
               className={({ isActive }) =>
                 isActive ? "text-blue-500" : ""
               }
             >
-              Facility
+              Contact
             </NavLink>
           </li>
           <li>
