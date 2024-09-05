@@ -34,16 +34,20 @@ function NavBar({ token }: { token: string }) {
         <FontAwesomeIcon icon={faBars} className="block sm:hidden" />
       </button>
       <div
-        className={`sm:flex flex-col sm:flex-row gap-4 absolute sm:static bg-transparent right-0 top-9 z-10 ${mobileMenuOpen ? 'flex' : 'hidden'}`}
+        className={`sm:flex flex-col sm:flex-row gap-4 absolute sm:static bg-transparent right-0 top-9 z-10 ${
+          mobileMenuOpen ? "flex" : "hidden"
+        }`}
       >
         <ul className="flex flex-col sm:flex-row gap-7 items-center">
-          <li>
+          <li className="">
             <NavLink
               to="/services"
               className={({ isActive }) =>
-                isActive ? "text-blue-500" : ""
-              }
-            >
+                `relative after:absolute after:left-0 after:bottom-[-0.5rem] 
+                  after:scale-x-0 hover:after:scale-x-100 after:h-[1px] after:w-full 
+                 after:bg-lime-500 after:transition-transform after:duration-300 after:ease-in-out 
+                 ${isActive ? "text-blue-500" : ""}`
+              }            >
               Services
             </NavLink>
           </li>
@@ -51,7 +55,10 @@ function NavBar({ token }: { token: string }) {
             <NavLink
               to="/contact"
               className={({ isActive }) =>
-                isActive ? "text-blue-500" : ""
+                `relative after:absolute after:left-0 after:bottom-[-0.5rem] 
+                  after:scale-x-0 hover:after:scale-x-100 after:h-[1px] after:w-full 
+                 after:bg-lime-500 after:transition-transform after:duration-300 after:ease-in-out 
+                 ${isActive ? "text-blue-500" : ""}`
               }
             >
               Contact
@@ -61,9 +68,11 @@ function NavBar({ token }: { token: string }) {
             <NavLink
               to="/merchandise"
               className={({ isActive }) =>
-                isActive ? "text-blue-500" : ""
-              }
-            >
+                `relative after:absolute after:left-0 after:bottom-[-0.5rem] 
+                  after:scale-0 hover:after:scale-100 after:h-[1px] after:w-full 
+                 after:bg-lime-500 after:transition-transform after:duration-300 after:ease-in-out 
+                 ${isActive ? "text-blue-500" : ""}`
+              }            >
               Merchandise
             </NavLink>
           </li>
