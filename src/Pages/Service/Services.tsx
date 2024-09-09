@@ -27,6 +27,7 @@ function Services() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 px-6 py-36 max-w-4xl mx-auto">
           {data.map((item,index) => (
             <Link
+            key={index}
               to={`/services/${item.id}`}
               className="bg-lime-500 flex flex-col items-center px-3 py-6 rounded-lg gap-4"
             >

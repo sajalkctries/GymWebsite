@@ -7,7 +7,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 
-function NavBar({ token }: { token: string }) {
+type NavBarProps ={
+  token : string,
+
+}
+function NavBar({ token}:NavBarProps) {
   const [isLoggedIn, setIsLoggedIn] = useState(!!token);
   const [displayMenu, setDisplayMenu] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -18,7 +22,10 @@ function NavBar({ token }: { token: string }) {
   }
 
   return (
-    <nav className="flex justify-between items-center py-3 px-5">
+
+
+ 
+    <nav className="flex justify-between items-center py-3 px-5 bg-gradient-to-r from-black via-[#171717] to-black">
       <div>
         <NavLink
           to="/home"
@@ -66,14 +73,14 @@ function NavBar({ token }: { token: string }) {
           </li>
           <li>
             <NavLink
-              to="/merchandise"
+              to="/about"
               className={({ isActive }) =>
                 `relative after:absolute after:left-0 after:bottom-[-0.5rem] 
                   after:scale-0 hover:after:scale-100 after:h-[1px] after:w-full 
                  after:bg-lime-500 after:transition-transform after:duration-300 after:ease-in-out 
                  ${isActive ? "text-blue-500" : ""}`
               }            >
-              Merchandise
+              About Us
             </NavLink>
           </li>
         </ul>

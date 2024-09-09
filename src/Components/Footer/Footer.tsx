@@ -60,10 +60,10 @@ function Footer() {
       </section>
       <section className="flex flex-col lg:flex-row gap-8 lg:justify-around text-gray-300 lg:py-7 bg-[#0e0e0e]">
         <div className="flex flex-col items-center gap-4">
-          <span>
+          <span className="text-center">
             Every Fitness World Branch is independently owned and operated,
           </span>
-          <span>
+          <span className="text-center">
             <span className="underline cursor-pointer">Click Here </span>to
             learn more about becoming Fitness world owner
           </span>
