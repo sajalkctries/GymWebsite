@@ -9,13 +9,13 @@ import { NavLink, Link } from "react-router-dom";
 
 type NavBarProps ={
   token : string,
-
 }
 function NavBar({ token}:NavBarProps) {
   const [isLoggedIn, setIsLoggedIn] = useState(!!token);
   const [displayMenu, setDisplayMenu] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
+  
+  console.log(token);
   function handleLogOut() {
     localStorage.removeItem("token");
     setIsLoggedIn(false);

@@ -12,9 +12,9 @@ import Login from "./Components/Login";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import Contact from "./Pages/Contact";
+import Protected from "./Components/Protected";
 
 const token = localStorage.getItem("token") as string;
-console.log(token)
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,8 +33,9 @@ const router = createBrowserRouter([
         path: "/contact",
         element: (
           <div className=" h-full flex flex-col">
-        
-           <Contact />
+            <Protected>
+              <Contact />
+            </Protected>
           </div>
         ),
       },
@@ -63,9 +64,6 @@ const router = createBrowserRouter([
         ],
    } ],
   },
- 
-
-
   { path: "/login", element: <Login isLogin={true} /> },
   { path: "/register", element: <Login isLogin={false} /> },
 ]);
