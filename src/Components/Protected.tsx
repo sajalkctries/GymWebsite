@@ -9,6 +9,7 @@ const token = localStorage.getItem("token");
   if (token) {
     return <>{children}</>; // Render the children if the token is present
   } else {
+    alert("You must Login First");
     return <Navigate to="/login" />; // Navigate to login page if the token is absent
   }
 }
