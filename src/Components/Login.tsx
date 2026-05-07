@@ -69,7 +69,7 @@ function Login({ isLogin }: { isLogin: boolean }) {
       <Helmet>
         <title>Login/Register</title>
       </Helmet>
-      <div className="h-4/5 border-2 border-solid border-black flex flex-col gap-4 p-6 bg-black text-white rounded-3xl w-[17rem]">
+      <div className="h-4/5 border-2 border-solid border-black flex flex-col gap-4 p-6 bg-black text-white rounded-3xl w-[19rem]">
         <span className="text-center">{isLogin ? `Login` : `Signup`}</span>
         <div>
           <label htmlFor="userName">Username</label>
