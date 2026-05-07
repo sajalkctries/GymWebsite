@@ -33,6 +33,10 @@ function Home() {
         "Remarkable customer service, a safe, clean, comfortable environment and the best training floor around await you at your local World Gym.",
     },
   ];
+
+  function handleClick() {
+    window.alert("Service Not Available at the moment");
+  }
   return (
     <main>
       <div className="text-white bg-[url('/Images/Gym.jpg')] bg-cover bg-[center_center] h-96">
@@ -47,21 +51,29 @@ function Home() {
           </div>
           <div className="flex justify-around flex-col sm:flex-row gap-4">
             <span>
-              <button className="bg-lime-500 px-2 py-1 rounded-tl-2xl text-black">
+              <button
+                className="bg-lime-500 px-2 py-1 rounded-tl-2xl text-black"
+                onClick={handleClick}
+              >
                 Join Now
               </button>
-              <span className="bg-lime-900 py-1 text-lime-300 px-2">
+              <span
+                className="bg-lime-900 py-1 text-lime-300 px-2"
+              >
                 49/month
               </span>
             </span>
-            <button className="bg-[#151515] py-1 px-3 w-32">
+            <button
+              className="bg-[#151515] py-1 px-3 w-32"
+              onClick={handleClick}
+            >
               Join Free Trial
             </button>
           </div>
         </div>
       </div>
       <Helmet>
-              <title>Home - Fitness World</title>
+        <title>Home - Fitness World</title>
       </Helmet>
       <div className="text-center text-3xl p-5">Why us?</div>
       <section className="py-10 flex justify-around flex-wrap gap-5">
